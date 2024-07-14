@@ -1,0 +1,18 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Couldn't read the selected file\nTry again with another file" : {
+
+    },
+    "OK" : {
+
+    },
+    "Select file" : {
+
+    },
+    "Unable to read file" : {
+
+    }
+  },
+  "version" : "1.0"
+}
