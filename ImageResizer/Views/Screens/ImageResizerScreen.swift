@@ -6,18 +6,25 @@
 //
 
 import SwiftUI
+import KamaalUI
 
 struct ImageResizerScreen: View {
     @StateObject private var selectedImageManager = SelectedImageManager()
 
     @State private var isSelectingImage = false
     @State private var alertMessage: (title: String, description: String?)?
+    @State private var viewSize: CGSize = .zero
 
     var body: some View {
         VStack {
-            if let selectedImage = selectedImageManager.selectedImage?.image {
+            if let selectedImage = selectedImageManager.selectedImage {
                 selectedImage
+                    .image
                     .resizable()
+                    .frame(
+                        width: resizeSelectedImageSize(image: selectedImage).width,
+                        height: resizeSelectedImageSize(image: selectedImage).height
+                    )
             }
             Button(action: handleSelectFile) {
                 Text("Select file")
@@ -25,11 +32,30 @@ struct ImageResizerScreen: View {
         }
         .fileImporter(
             isPresented: $isSelectingImage,
-            allowedContentTypes: [.jpeg, .png],
+            allowedContentTypes: ImageTypes.supportedUTTypes,
             allowsMultipleSelection: false,
             onCompletion: handleSelectedFile
         )
+        .ktakeSizeEagerly()
         .formattedAlert(message: $alertMessage)
+        .kBindToFrameSize($viewSize)
+    }
+
+    private func resizeSelectedImageSize(image: SelectedImage) -> CGSize {
+        let divider: Double = 2
+        let shortestSide = min(viewSize.width, viewSize.height, 250)
+        switch image.sizing {
+        case .laying:
+            let width = shortestSide
+            let shrinkage = width / image.metadata.dimensions.width
+            return CGSize(width: width / divider, height: (image.metadata.dimensions.height * shrinkage) / divider)
+        case .standing:
+            let height = shortestSide
+            let shrinkage = height / image.metadata.dimensions.height
+            return CGSize(width: (image.metadata.dimensions.width * shrinkage) / divider, height: height / divider)
+        case .square:
+            return CGSize(width: shortestSide / divider, height: shortestSide / divider)
+        }
     }
 
     private func handleSelectFile() {

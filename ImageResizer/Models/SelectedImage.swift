@@ -7,15 +7,30 @@
 
 import SwiftUI
 
+enum SelectedImageSizings {
+    case laying
+    case standing
+    case square
+}
+
 struct SelectedImage {
     let image: Image
     let data: Data
     let metadata: Metadata
+    let sizing: SelectedImageSizings
 
     init(image: Image, data: Data, metadata: Metadata) {
         self.image = image
         self.data = data
         self.metadata = metadata
+
+        if metadata.dimensions.width > metadata.dimensions.height {
+            self.sizing = .laying
+        } else if metadata.dimensions.height > metadata.dimensions.width {
+            self.sizing = .standing
+        } else {
+            self.sizing = .square
+        }
     }
 
     static func from(url: URL) -> SelectedImage? {

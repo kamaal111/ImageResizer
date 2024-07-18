@@ -10,6 +10,7 @@
 		2C299D442C43EF270068AA16 /* ImageTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C299D432C43EF260068AA16 /* ImageTypes.swift */; };
 		2C299D462C43F8650068AA16 /* SelectedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C299D452C43F8640068AA16 /* SelectedImage.swift */; };
 		2C299D492C43F9740068AA16 /* Data+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C299D482C43F9700068AA16 /* Data+extensions.swift */; };
+		2C299D4E2C44009E0068AA16 /* KamaalUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2C299D4D2C44009E0068AA16 /* KamaalUI */; };
 		2CB523C32C42D8B600E73071 /* ImageResizerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB523C22C42D8B600E73071 /* ImageResizerApp.swift */; };
 		2CB523C52C42D8B600E73071 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB523C42C42D8B600E73071 /* ContentView.swift */; };
 		2CB523C72C42D8B700E73071 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB523C62C42D8B700E73071 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C299D4E2C44009E0068AA16 /* KamaalUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +192,9 @@
 				Base,
 			);
 			mainGroup = 2CB523B62C42D8B600E73071;
+			packageReferences = (
+				2C299D4C2C44009E0068AA16 /* XCRemoteSwiftPackageReference "KamaalSwift" */,
+			);
 			productRefGroup = 2CB523C02C42D8B600E73071 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -370,10 +375,10 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.kamaal.ImageResizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -408,10 +413,10 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.kamaal.ImageResizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -445,6 +450,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2C299D4C2C44009E0068AA16 /* XCRemoteSwiftPackageReference "KamaalSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kamaalio/KamaalSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2C299D4D2C44009E0068AA16 /* KamaalUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C299D4C2C44009E0068AA16 /* XCRemoteSwiftPackageReference "KamaalSwift" */;
+			productName = KamaalUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2CB523B72C42D8B600E73071 /* Project object */;
 }
