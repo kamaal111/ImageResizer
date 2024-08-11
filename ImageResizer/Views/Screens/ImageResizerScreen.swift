@@ -29,6 +29,7 @@ struct ImageResizerScreen: View {
             Button(action: handleSelectFile) {
                 Text("Select file")
             }
+            .disabled(selectedImageManager.loadingInitialData)
         }
         .fileImporter(
             isPresented: $isSelectingImage,
@@ -36,7 +37,8 @@ struct ImageResizerScreen: View {
             allowsMultipleSelection: false,
             onCompletion: handleSelectedFile
         )
-        .ktakeSizeEagerly()
+        .padding(.vertical)
+        .ktakeSizeEagerly(alignment: .top)
         .formattedAlert(message: $alertMessage)
         .kBindToFrameSize($viewSize)
     }

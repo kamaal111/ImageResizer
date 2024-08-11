@@ -19,6 +19,7 @@
 		2CCFCC2F2C42DBC7005DCC1D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2CCFCC2E2C42DBC7005DCC1D /* Localizable.xcstrings */; };
 		2CCFCC332C42F656005DCC1D /* FormattedAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFCC322C42F64A005DCC1D /* FormattedAlert.swift */; };
 		2CCFCC362C42F7F1005DCC1D /* SelectedImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFCC352C42F7E8005DCC1D /* SelectedImageManager.swift */; };
+		2CD9CC232C68D44500202653 /* KamaalLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 2CD9CC222C68D44500202653 /* KamaalLogger */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C299D4E2C44009E0068AA16 /* KamaalUI in Frameworks */,
+				2CD9CC232C68D44500202653 /* KamaalLogger in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +81,7 @@
 			children = (
 				2CB523C12C42D8B600E73071 /* ImageResizer */,
 				2CB523C02C42D8B600E73071 /* Products */,
+				2CD9CC212C68D44500202653 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,6 +149,13 @@
 				2CCFCC352C42F7E8005DCC1D /* SelectedImageManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		2CD9CC212C68D44500202653 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,6 +477,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2C299D4C2C44009E0068AA16 /* XCRemoteSwiftPackageReference "KamaalSwift" */;
 			productName = KamaalUI;
+		};
+		2CD9CC222C68D44500202653 /* KamaalLogger */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C299D4C2C44009E0068AA16 /* XCRemoteSwiftPackageReference "KamaalSwift" */;
+			productName = KamaalLogger;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

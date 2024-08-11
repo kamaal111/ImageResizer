@@ -7,7 +7,7 @@
 
 import UniformTypeIdentifiers
 
-enum ImageTypes {
+enum ImageTypes: String {
     case jpg
     case png
 
